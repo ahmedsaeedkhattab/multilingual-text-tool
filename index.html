@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multilingual Text Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Multilingual Text Analyzer</h1>
+        <p>Enter text below to clean, parse, and analyze vocabulary structure.</p>
+        <textarea id="inputText" placeholder="Enter English, German, Russian, or Indonesian text..."></textarea>
+        <button onclick="analyzeText()">Analyze Text</button>
+        <div id="output" class="result-box"></div>
+    </div>
+    <script>
+        function analyzeText() {
+            let text = document.getElementById('inputText').value;
+            let words = text.trim().split(/\s+/).filter(w => w.length > 0);
+            document.getElementById('output').innerHTML = 
+                `<strong>Total Words:</strong> ${words.length}<br>` +
+                `<strong>Status:</strong> Processed Successfully`;
+        }
+    </script>
+</body>
+</html>
